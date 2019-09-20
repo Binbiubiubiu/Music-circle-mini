@@ -12,7 +12,7 @@ Page({
     const target = event.target;
     this.setData({
       selectedTabIndex: target.dataset.index
-    })
+    }) 
   },
   goToSearchPage(){
     wx.navigateTo({
