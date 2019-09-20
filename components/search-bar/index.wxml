@@ -1,0 +1,5 @@
+<!--components/search-bar/index.wxml-->
+<view class="container">
+    <input class="search-input" type="search" disabled="{{disabled}}" placeholder-class="placeholder" placeholder="搜索歌曲/歌词/专辑"/>
+      <!-- <icon type="search" size="18" class="icon" /> -->
+  </view>

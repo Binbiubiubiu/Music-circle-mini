@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/me/index",
+    "pages/search/index",
+    "pages/player/index"
+  ],
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#7A7E83",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tab_find.png",
+        "selectedIconPath": "images/tab_find.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/me/index",
+        "iconPath": "images/tab_me.png",
+        "selectedIconPath": "images/tab_me.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Music Circle",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

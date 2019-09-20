@@ -1,0 +1,8 @@
+<!--index.wxml-->
+ <view>
+    <search-bar bindtap="goToSearchPage" disabled></search-bar>
+    <view class="tab">
+      <view wx:for="{{tabs}}" data-index="{{index}}" class="tab-item {{selectedTabIndex==index?'tab-active':''}}" bindtap="handleTabTap">{{item}}</view>
+    </view>
+  </view>
+

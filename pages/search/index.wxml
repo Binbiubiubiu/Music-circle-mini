@@ -1,0 +1,6 @@
+<!--index.wxml-->
+ <view>
+     <search-bar ></search-bar>
+   
+  </view>
+

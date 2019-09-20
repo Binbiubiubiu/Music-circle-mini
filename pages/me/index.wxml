@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录/注册 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="me-tabbar">
+      <view class="me-tabbar-item">
+        <view>
+          <image class="me-tabbar-icon" src="/images/me_like.png"></image>
+        </view>
+        <text>我的喜爱</text>
+      </view>
+      <view class="me-tabbar-item">
+       <view>
+          <image class="me-tabbar-icon" src="/images/me_radio.png"></image>
+        </view>
+        <text>我的电台</text>
+      </view>
+      <view class="me-tabbar-item">
+       <view>
+          <image class="me-tabbar-icon" src="/images/me_now.png"></image>
+        </view>
+        <text>最近播放</text>
+      </view>
+    </view>
+</view>

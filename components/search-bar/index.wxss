@@ -1,0 +1,28 @@
+/* components/search-bar/index.wxss */
+
+.container {
+  padding: 20rpx;
+}
+
+.search-input {
+  width: 90%;
+  margin: 0 auto;
+  background: transparent;
+  font-size: 30rpx;
+  border-radius: 30rpx;
+  color: #000;
+  border: 2rpx solid #999;
+  padding: 10rpx;
+  text-align: center;
+}
+
+.icon {
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+
+
+.placeholder{
+  text-align: center;
+  color: #999;
+}
