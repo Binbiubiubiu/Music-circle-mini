@@ -5,7 +5,18 @@ a music  mini
 ![image](https://img.shields.io/github/stars/Wildlifes/Music-circle-mini)
 ![image](https://img.shields.io/github/license/Wildlifes/Music-circle-mini)
 
-juejin website( only finish index)
-
 ## Some Screenshots
-<img src="screenshot/index.png" >
+<img style="width:30%" src="screenshot/推荐.png" >
+<img style="width:30%" src="screenshot/MV.png" >
+<img style="width:30%" src="screenshot/电台.png" >
+<img style="width:30%" src="screenshot/排行.png" >
+<img style="width:30%" src="screenshot/我的.png" >
+
+## Blocks
+
+- 推荐列表
+- MV列表
+- 电台列表
+- 排行列表
+- webview
+- 我的
