@@ -1,0 +1,6 @@
+/* components/bannar/index.wxss */
+@import "../../styles/gobal.wxss";
+
+.bannar{
+  height: 250rpx;
+}

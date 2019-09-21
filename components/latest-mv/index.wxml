@@ -1,0 +1,20 @@
+<!--components/today-songs/index.wxml-->
+<scroll-view scroll-y>
+  <view class="sub-title">
+    <text class="text">最新推荐</text>
+  </view>
+
+  <view class="list-wrapper">
+    <scroll-view class="list" scroll-x style="width: 100%">
+      <view wx:for="{{list}}" wx:key="{{item}}" class="list-item ">
+        <view class="list-image-wrapper cover-play">
+         <image src="{{item.cover}}" mode="widthFix" class="normal-image "></image>
+        </view>
+        <view class="list-text">
+          {{item.briefDesc}}
+        </view>
+      </view>
+
+    </scroll-view>
+  </view>
+</scroll-view>

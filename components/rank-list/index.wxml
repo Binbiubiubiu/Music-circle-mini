@@ -1,0 +1,21 @@
+<!--components/today-songs/index.wxml-->
+<scroll-view>
+
+ 
+    <view class="list-item" wx:for="{{list}}" wx:key="{{item}}">
+      <view >
+        <image class="normal-image list-image" mode="widthFix" src="{{item.coverImgUrl}}"></image>
+      </view>
+      <view class="list-content">
+        <view class="list-title">{{item.name}}</view>
+        <view wx:for="{{item.tracks}}" 
+              class="list-text"
+              wx:key="{{song.first}}"
+              wx:for-index="idx" 
+              wx:for-item="song">{{idx+1}}. {{song.first}} — {{song.second}}</view>
+      </view>
+     
+    </view>
+
+
+</scroll-view>

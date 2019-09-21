@@ -1,47 +1,19 @@
-// index.js
-const { fetchBannar}  = require('../../api/index.js');
-
+// pages/webview/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tabs:["推荐","MV","电台","排行"],
-    winWidth: 0,
-    winHeight: 0,
-    pixelRatio:2,
-    // tab切换
-    currentTab: 0
+    link:"http://www.baidu.com"
   },
-  handleTabTap(event){
-    const target = event.target;
-    this.setData({
-      currentTab: target.dataset.index
-    }) 
-  },
-  bindChange (e) {
 
-    this.setData({
-      currentTab: e.detail.current
-    });
-  },
-  goToSearchPage(){
-    wx.navigateTo({
-      url: '/pages/search/index',
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.getSystemInfo({
-      success:  (res)=> {
-        this.setData({
-          clientHeight: res.windowHeight,
-          pixelRatio: res.pixelRatio
-        });
-      }
+    this.setData({
+      link: options.url
     })
   },
 

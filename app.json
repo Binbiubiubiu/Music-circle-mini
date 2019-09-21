@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/me/index",
     "pages/search/index",
-    "pages/player/index"
+    "pages/player/index",
+    "pages/webview/index"
   ],
   "tabBar": {
     "color": "#7A7E83",

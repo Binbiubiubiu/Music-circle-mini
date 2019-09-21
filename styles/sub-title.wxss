@@ -1,0 +1,26 @@
+.sub-title{
+  text-align: center;
+}
+
+.sub-title .text{
+ font-size: 32rpx;
+}
+
+.sub-title .text::before{
+  content: '·';
+  position: relative;
+  left:-20rpx;
+  font-size: 30px;
+  font-weight:bolder;
+  vertical-align: middle;
+}
+
+.sub-title .text::after{
+  content: '·';
+  position: relative;
+  right:-20rpx;
+  font-size: 30px;
+  font-weight:bolder;
+  vertical-align: middle;
+}
+

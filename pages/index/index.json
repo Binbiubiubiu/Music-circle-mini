@@ -1,5 +1,11 @@
 {
   "usingComponents": {
-    "search-bar": "/components/search-bar/index"
+    "search-bar": "/components/search-bar/index",
+    "bannar": "/components/bannar/index",
+    "today-songs": "/components/today-songs/index",
+    "nice-mv": "/components/nice-mv/index",
+    "latest-mv": "/components/latest-mv/index",
+    "nice-radio": "/components/nice-radio/index",
+    "rank-list": "/components/rank-list/index"
   }
 }

@@ -1,8 +1,34 @@
 <!--index.wxml-->
- <view>
-    <search-bar bindtap="goToSearchPage" disabled></search-bar>
-    <view class="tab">
-      <view wx:for="{{tabs}}" data-index="{{index}}" class="tab-item {{selectedTabIndex==index?'tab-active':''}}" bindtap="handleTabTap">{{item}}</view>
-    </view>
+<view>
+  <search-bar bindtap="goToSearchPage" disabled></search-bar>
+  <view class="tab">
+    <view wx:for="{{tabs}}" wx:key="{{item}}" data-index="{{index}}" class="tab-item {{currentTab==index?'tab-active':''}}" bindtap="handleTabTap">{{item}}</view>
   </view>
+  <swiper current="{{currentTab}}" bindchange="bindChange" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+    <swiper-item>
+      <scroll-view scroll-y style="height:100%">
+        <bannar></bannar>
+        <today-songs></today-songs>
+        </scroll-view>
+    </swiper-item>
 
+    <swiper-item>
+      <scroll-view scroll-y style="height:100%">
+        <latest-mv></latest-mv>
+        <nice-mv></nice-mv>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+       <scroll-view scroll-y style="height:100%">
+        <nice-radio></nice-radio>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y style="height:100%">
+        <rank-list></rank-list>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+
+
+</view>

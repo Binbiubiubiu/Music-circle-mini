@@ -11,9 +11,42 @@ Page({
   },
   //事件处理函数
   bindViewTap: function() {
-   
+    
+  },
+  getOpenId(){
+    var that=this;
+    wx.login({
+      success:function success(res){
+        var code = res.code;
+        wx.request({
+          url:'',
+          data:{
+
+          },
+          header:{
+            "Contenxt-Type":"application/json"
+          },
+          method:'GET',
+          dataType:'json',
+          responseType:'text',
+          success:(res)=>{
+            console.log(res.data);
+            that.globalData.Openid = res.data.ResponseData;
+            that.globalData.IsOpenid = res.data.DealResult;
+
+          },
+          fail:()=>{},
+          complete:(res)=>{
+            this.setData({
+              hasUserInfo: true
+            })
+          }
+        })
+      }
+    })
   },
   onLoad: function () {
+   
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -43,7 +76,9 @@ Page({
   },
   getUserInfo: function(e) {
     console.log(e)
+    if (!e.detail.userInfo)return;
     app.globalData.userInfo = e.detail.userInfo
+    
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true

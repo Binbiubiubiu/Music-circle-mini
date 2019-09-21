@@ -1,0 +1,11 @@
+<!--components/today-songs/index.wxml-->
+
+<view class="sub-title">
+  <text class="text">今日推荐歌单</text>
+</view>
+<view class="list">
+  <view class="list-item" wx:for="{{list}}" wx:key="{{item}}">
+    <image class="normal-image" mode="widthFix" src="{{item.picUrl}}"></image>
+    <view class="list-text">{{item.name}}</view>
+  </view>
+</view>

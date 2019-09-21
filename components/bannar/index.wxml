@@ -1,0 +1,9 @@
+<!--components/bannar/index.wxml-->
+<swiper class="bannar" indicator-dots autoplay circular indicator-active-color="#EDB559" indicator-color="#E7EAEE">
+  <swiper-item wx:for="{{bannars}}" wx:key="{{item}}" >
+    <navigator url="../webview/index?url={{item.url}}" >
+      <image src="{{item.pic}}" mode="widthFix" class="normal-image"></image>
+    </navigator>
+    
+  </swiper-item>
+</swiper>

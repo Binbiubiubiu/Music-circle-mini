@@ -1,4 +1,5 @@
 /* components/search-bar/index.wxss */
+@import "../../styles/gobal.wxss";
 
 .container {
   padding: 20rpx;

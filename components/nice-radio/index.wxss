@@ -1,0 +1,25 @@
+/* components/today-songs/index.wxss */
+@import "../../styles/gobal.wxss";
+@import "../../styles/sub-title.wxss";
+@import "../../styles/cover-play-image.wxss";
+
+.list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.list-item{
+  width: 44%;
+  padding-bottom: 30rpx;
+}
+
+
+.list-text{
+  font-size:28rpx;
+}
+
+.list-sub-text{
+  font-size:24rpx;
+  color:#aaa;
+}
