@@ -11,7 +11,9 @@ Page({
     songs:{},
     currentTime:0,
     percent:0,
-    isPlay:false
+    isPlay:false,
+    progressbarOffsetLeft:0,
+    progressbarLength:0
   },
   audioPlay: function () {
     const {isPlay} =this.data;
@@ -45,10 +47,17 @@ Page({
       this.setData(changeObj)
     }
   
-   
   },
-  audio14: function () {
-    this.audioCtx.seek(14)
+  handleArchorChange(percent){
+    if(percent==this.data.percent) return;
+    this.setData({
+      currentTime: ~~(percent/100 * this.data.detail.dt),
+      percent: percent
+    })
+  },
+  audioMove() {
+    const { detail:{dt}, percent}=this.data;
+    this.audioCtx.seek(~~(dt*percent/100/1000))
   },
   audioStart: function () {
     this.audioCtx.seek(0)
@@ -81,16 +90,18 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    // const innerAudioContext = wx.createInnerAudioContext()
-    // innerAudioContext.autoplay = true
-    // innerAudioContext.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46'
-    // innerAudioContext.onPlay(() => {
-    //   console.log('开始播放')
-    // })
-    // innerAudioContext.onError((res) => {
-    //   console.log(res.errMsg)
-    //   console.log(res.errCode)
-    // })
+    var query = wx.createSelectorQuery();
+    //选择id
+    var that = this;
+    query.select('.progress-bar').boundingClientRect( (rect)=> {
+      // this.progressbarLength = rect.width;
+      this.setData({
+        progressbarOffsetLeft: rect.left,
+        progressbarLength: rect.width
+      })
+      console.log(rect)
+    }).exec();
+    
     
   },
 

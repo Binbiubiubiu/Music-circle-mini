@@ -9,6 +9,17 @@
   padding: 40rpx 60rpx 60rpx;
   overflow: hidden;
 }
+.bannar-logo{
+  position: relative;
+}
+.bannar-logo::before{
+  content:attr(data-playcount);
+  position: absolute;
+  top:6rpx;
+  right:10rpx;
+  color:#fff;
+  font-size:24rpx;
+}
 
 .bannar-mask {
   position: absolute;

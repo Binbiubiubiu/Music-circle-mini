@@ -1,5 +1,6 @@
 <!--player/index.wxml-->
 <wxs src="../../utils/filter.wxs" module="filter" />
+<wxs module="touchHelper" src="./touch.wxs"></wxs>
 
 <view class="player-wrapper">
   <view class="player-mask" style="background-image:url({{detail.al.picUrl}})"></view>
@@ -16,7 +17,7 @@
 
   <view class="player-progress" data-current="{{filter.formatTime(currentTime)}}" data-end="{{filter.formatTime(detail.dt)}}">
     <view class="progress-bar" style="background:linear-gradient(to  right, rgba(255, 255, 255, 1) {{percent}}%, rgba(255, 255, 255, .40) {{percent}}%);">
-      <view class="progress-archor" style="left:{{percent}}%;"></view>
+      <view class="progress-archor" change:style="{{touchHelper.propObserver}}" bindtouchstart="{{touchHelper.touchstart}}"  bindtouchmove="{{touchHelper.touchmove}}" bindtouchend="{{touchHelper.touchend}}" data-offsetleft="{{progressbarOffsetLeft}}" data-maxleft="{{progressbarLength}}"  style="left:{{percent}}%;"></view>
     </view>
   </view>
   <view class="player-btn-group">

@@ -1,11 +1,12 @@
 <!--components/today-songs/index.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
 
 <view class="sub-title">
   <text class="text">今日推荐歌单</text>
 </view>
 <view class="list">
  
-  <view class="list-item" wx:for="{{list}}" wx:key="{{item}}">
+  <view class="list-item" wx:for="{{list}}" wx:key="{{item}}" data-playcount="{{'▷ '+filter.formatNum2Wan(item.playCount)}}">
     <navigator url="../songsheet/index?id={{item.id}}" >
       <image class="normal-image" mode="widthFix" src="{{item.picUrl}}"></image>
       <view class="list-text">{{item.name}}</view>

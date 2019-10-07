@@ -4,7 +4,10 @@
 
 <view class="bannar">
   <view class="bannar-mask" style="background-image:url({{playlist.coverImgUrl}})"></view>
-   <image src="{{playlist.coverImgUrl}}" mode="widthFix" class="normal-image"></image>
+  <view class="bannar-logo" data-playcount="{{'▷ '+filter.formatNum2Wan(playlist.playCount)}}">
+    <image src="{{playlist.coverImgUrl}}" mode="widthFix" class="normal-image " ></image>
+  </view>
+  
   <view class="bannar-content">
     <view class="bannar-title">
       {{playlist.name}}

@@ -1,0 +1,30 @@
+module.exports = {
+  touchstart: function (event, instance) {
+    var archor = instance.selectComponent('.progress-archor');
+    console.log(11)
+    archor.addClass('progress-archor-active');
+  },
+  touchmove: function (event,instance) {
+    var playerprogress = instance.selectComponent('.player-progress')
+    var progressbar = instance.selectComponent('.progress-bar')
+    var archor = instance.selectComponent('.progress-archor')
+    var dataSet = archor.getDataset();
+    
+    var left = event.touches[0].clientX - dataSet.offsetleft;
+    var maxLeft = dataSet.maxleft;
+    if (left > maxLeft||left<0) return;
+
+    archor.setStyle({ left: left+'px'})
+    var percent = ~~(left / maxLeft*100);
+    progressbar.setStyle({ background: 'linear-gradient(to  right, rgba(255, 255, 255, 1) ' + percent+'%, rgba(255, 255, 255, .40) '+percent+'%)'})
+    instance.callMethod('handleArchorChange', percent);
+  },
+  touchend: function (event, instance) {
+    var archor = instance.selectComponent('.progress-archor')
+    archor.removeClass('progress-archor-active');
+    instance.callMethod('audioMove');
+  },
+  propObserver: function (newValue, oldValue, ownerInstance, instance) {
+    // console.log('prop observer', newValue, oldValue)
+  }
+}

@@ -9,14 +9,26 @@
 }
 
 .list-item{
+  position: relative;
   width: 29%;
   padding-bottom: 30rpx;
+}
+
+
+.list-item::before{
+  content:attr(data-playcount);
+  position: absolute;
+  top:6rpx;
+  right:10rpx;
+  color:#fff;
+  font-size:24rpx;
 }
 
 .list-image{
   width: 100%;
   border-radius: 10rpx;
 }
+
 
 .list-text{
   font-size:24rpx;

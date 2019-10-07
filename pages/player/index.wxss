@@ -68,13 +68,20 @@ page{
 
 .progress-archor{
   position: absolute;
-  top:0;
+  top:50%;
   left:0%;
   width: 20rpx;
   height: 20rpx;
   border-radius: 50%;
   background-color: #fff;
-  transform: translate(-50%,-46%);
+  transform:scale(1) translate3d(-50%,-50%,0);
+  transform-origin: 0% 0%;
+  transition: transform .2s;
+}
+
+.progress-archor-active{
+  transform: scale(1.4) translate3d(-50%,-50%,0);
+  will-change: transform;
 }
 
 

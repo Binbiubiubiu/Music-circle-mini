@@ -14,8 +14,14 @@ var formatZeroEnough=function(num){
   return +num < 10 ? '0' + num : num;
 }
 
+var formatNum2Wan = function (num) {
+  if (typeof num !== 'number') return '';
+  return +num>10000 ? ~~(num/10000)+'万' : num;
+}
+
 module.exports={
   getAuthors: getAuthors,
   formatTime: formatTime,
-  formatZeroEnough: formatZeroEnough
+  formatZeroEnough: formatZeroEnough,
+  formatNum2Wan: formatNum2Wan
 }
