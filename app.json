@@ -3,8 +3,9 @@
     "pages/index/index",
     "pages/me/index",
     "pages/search/index",
-    "pages/player/index",
-    "pages/webview/index"
+    "pages/webview/index",
+    "pages/songsheet/index",
+    "pages/player/index"
   ],
   "tabBar": {
     "color": "#7A7E83",

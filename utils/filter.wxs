@@ -1,0 +1,21 @@
+var getAuthors = function(authors){
+  return authors.map(function(item){
+    return item.name;
+  }).join('、');
+} 
+
+var formatTime = function (time) {
+  var seconds=~~time/1000;
+  return formatZeroEnough(~~(seconds / 60)) + ':' + formatZeroEnough(~~(seconds % 60));
+} 
+
+var formatZeroEnough=function(num){
+  if(typeof num !== 'number') return  '';
+  return +num < 10 ? '0' + num : num;
+}
+
+module.exports={
+  getAuthors: getAuthors,
+  formatTime: formatTime,
+  formatZeroEnough: formatZeroEnough
+}

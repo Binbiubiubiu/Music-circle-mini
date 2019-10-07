@@ -1,21 +1,39 @@
 <!--components/today-songs/index.wxml-->
-<scroll-view>
+<scroll-view class="list">
 
- 
-    <view class="list-item" wx:for="{{list}}" wx:key="{{item}}">
-      <view >
-        <image class="normal-image list-image" mode="widthFix" src="{{item.coverImgUrl}}"></image>
+  <view class="list-title">官方榜</view>
+
+
+    <navigator url="../songsheet/index?id={{item.id}}" wx:for="{{gfRank}}" wx:key="{{item}}" class="list-row">
+
+      <image class="normal-image list-image" data-refresh="{{item.updateFrequency}}" mode="widthFix" src="{{item.coverImgUrl}}"></image>
+
+      <view class="list-row-content ">
+
+        <view wx:for="{{item.tracks}}" class="list-row-text" wx:key="{{song.first}}" wx:for-index="idx" wx:for-item="song">{{idx+1}}. {{song.first}} - {{song.second}}</view>
       </view>
-      <view class="list-content">
-        <view class="list-title">{{item.name}}</view>
-        <view wx:for="{{item.tracks}}" 
-              class="list-text"
-              wx:key="{{song.first}}"
-              wx:for-index="idx" 
-              wx:for-item="song">{{idx+1}}. {{song.first}} — {{song.second}}</view>
-      </view>
-     
-    </view>
+
+    </navigator>
+
+
+
+  <view class="list-title">推荐榜</view>
+  <view class="list-grid">
+    <navigator url="../songsheet/index?id={{item.id}}" wx:for="{{tjRank}}" wx:key="{{item}}">
+      <image class="normal-image list-image" data-refresh="{{item.updateFrequency}}" mode="widthFix" src="{{item.coverImgUrl}}"></image>
+      <view class="list-grid-text">{{item.name}}</view>
+    </navigator>
+
+  </view>
+
+  <view class="list-title">全球榜</view>
+  <view class="list-grid">
+    <navigator url="../songsheet/index?id={{item.id}}" wx:for="{{qqRank}}" wx:key="{{item}}">
+      <image class="normal-image list-image" data-refresh="{{item.updateFrequency}}" mode="widthFix" src="{{item.coverImgUrl}}"></image>
+      <view class="list-grid-text">{{item.name}}</view>
+    </navigator>
+
+  </view>
 
 
 </scroll-view>

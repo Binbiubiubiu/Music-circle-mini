@@ -1,0 +1,24 @@
+{
+  "name": "music-circle",
+  "version": "1.0.0",
+  "description": "a music mini   ![image](https://img.shields.io/github/issues/Wildlifes/Music-circle-mini) ![image](https://img.shields.io/github/forks/Wildlifes/Music-circle-mini) ![image](https://img.shields.io/github/stars/Wildlifes/Music-circle-mini) ![image](https://img.shields.io/github/license/Wildlifes/Music-circle-mini)",
+  "main": "app.js",
+  "dependencies": {
+    "miniprogram-computed": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wildlifes/Music-circle-mini.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wildlifes/Music-circle-mini/issues"
+  },
+  "homepage": "https://github.com/Wildlifes/Music-circle-mini#readme"
+}

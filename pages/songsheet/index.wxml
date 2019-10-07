@@ -1,0 +1,72 @@
+<!--pages/songsheet/index.wxml-->
+
+<wxs src="../../utils/filter.wxs" module="filter" />
+
+<view class="bannar">
+  <view class="bannar-mask" style="background-image:url({{playlist.coverImgUrl}})"></view>
+   <image src="{{playlist.coverImgUrl}}" mode="widthFix" class="normal-image"></image>
+  <view class="bannar-content">
+    <view class="bannar-title">
+      {{playlist.name}}
+    </view>
+    <view class="bannar-author">
+      <image src="{{playlist.creator.avatarUrl}}" mode="widthFix" class="bannar-avatar"></image>
+      <text class="bannar-nickname">{{playlist.creator.nickname}}</text>
+    </view>
+    <view class="bannar-info">
+      {{playlist.description}}
+    </view>
+  </view>
+  <view class="bannar-btn-group">
+    <view class="bannar-btn">
+      <image src="/images/songsheet_comment.png" mode="widthFix" class="bannar-btn-icon"/>
+      {{playlist.commentCount}}
+    </view>
+    <view class="bannar-btn">
+      <image src="/images/songsheet_share.png" mode="widthFix" class="bannar-btn-icon"/>
+      {{playlist.shareCount}}
+    </view>
+    <view class="bannar-btn">
+      <image src="/images/songsheet_download.png" mode="widthFix" class="bannar-btn-icon"/>
+      下载
+    </view>
+    <view class="bannar-btn">
+      <image src="/images/songsheet_more.png" mode="widthFix" class="bannar-btn-icon"/>
+      更多
+    </view>
+  </view>
+</view>
+<view class="song-list">
+<view class="song-item" >
+   <view class="song-index song-block">
+      <image src="/images/songsheet_play.png" mode="widthFix" class="song-btn-icon"></image>
+   </view>
+    <view class="song-content">
+      <view class="song-title ">播放全部(共{{playlist.trackCount}}首歌曲)</view> 
+    </view>
+    <view class="song-store-btn" >
+      + 收藏({{playlist.subscribedCount}})
+    </view>
+  </view>
+  <navigator url="../player/index?id={{song.id}}" wx:for="{{playlist.tracks}}"  wx:key="{{song.id}}" wx:for-index="idx" wx:for-item="song">
+  <view class="song-item" >
+   
+    <view class="song-index song-block">
+      {{idx+1}}
+    </view>
+      <view class="song-content">
+        <view class="song-title text-ellipsis">{{song.name}}</view>
+        <view class="song-subtitle text-ellipsis">{{filter.getAuthors(song.ar)}} - {{song.al.name}}</view>
+      </view>
+      <view class="song-btn-group " >
+        <view class="song-btn song-block" wx:if="{{song.mv}}">
+          <image src="/images/songsheet_video.png" mode="widthFix" class="song-btn-icon"></image>
+        </view>
+        <view class="song-btn song-block-2">
+          <image src="/images/songsheet_more_small.png" mode="widthFix" class="song-btn-icon"></image>
+        </view>
+      </view>
+     
+    </view>
+ </navigator>
+</view>

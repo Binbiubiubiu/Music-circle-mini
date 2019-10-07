@@ -1,1 +1,91 @@
 /* player/index.wxss */
+.player-wrapper{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+page{
+  height: 100vh;
+}
+
+.player-mask{
+  position: absolute;
+  top:-20%;
+  left:-20%;
+  right:-20%;
+  bottom:-20%;
+  z-index: -1;
+  background:#999  no-repeat  center 60%/60%;
+  filter: blur(50px);
+}
+
+.player-image{
+  border-radius: 50%;
+  width: 50vw;
+  height:50vw;
+  border: 80rpx solid #000;
+  box-shadow: 0 0 0 14rpx rgba(255, 255, 255, .24);
+}
+
+.player-main{
+  flex:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-progress{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.player-progress::before,.player-progress::after{
+  
+  font-size: 26rpx;
+  color:#fff;
+  width: 120rpx;
+  text-align: center;
+}
+
+.player-progress::before{
+  content:attr(data-current);
+  color:#fff;
+}
+
+.player-progress::after{
+  content:attr(data-end);
+  color:rgba(255, 255, 255, .5);
+}
+
+.progress-bar{
+  position: relative;
+  height: 4rpx;
+  flex:1;
+}
+
+.progress-archor{
+  position: absolute;
+  top:0;
+  left:0%;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  transform: translate(-50%,-46%);
+}
+
+
+.player-btn-group{
+  display: flex;
+  height: 14vh;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+.player-btn{
+  width: 100rpx;
+}

@@ -8,7 +8,7 @@ a music mini
 
 ## Some Screenshots
 
-<img width="240" src="screenshot/推荐.png" ><img width="240" src="screenshot/MV.png" ><img width="240" src="screenshot/电台.png" ><img width="240" src="screenshot/排行.png" ><img width="240" src="screenshot/我的.png" >
+<img width="240" src="screenshot/推荐.png" ><img width="240" src="screenshot/MV.png" ><img width="240" src="screenshot/电台.png" ><img width="240" src="screenshot/排行.png" ><img width="240" src="screenshot/我的.png" ><img width="240" src="screenshot/歌单详情.png" ><img width="240" src="screenshot/播放.png" >
 
 ## Blocks
 
@@ -18,3 +18,5 @@ a music mini
 - 排行列表
 - webview
 - 我的
+- 歌单详情
+- 播放详情

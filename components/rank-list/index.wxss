@@ -2,37 +2,76 @@
 @import "../../styles/gobal.wxss";
 @import "../../styles/cover-play-image.wxss";
 
-.list{
+.list {
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+
+.list-row {
+  display: grid;
+  grid-template-columns:calc((100% - 40rpx)/3) auto;
+  grid-gap: 20rpx 30rpx;
+  margin: 20rpx 0;
+}
+
+.list-image {
+  position: relative;
+  display: block;
+
+}
+
+
+
+.list-image::before {
+  content: attr(data-refresh);
+  color: #fff;
+  font-size: 24rpx;
+  position: absolute;
+  bottom: 10rpx;
+  left: 10rpx;
+  z-index: 2;
+}
+
+.list-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: linear-gradient(transparent 60%, rgba(0, 0, 0, 0.5));
+
+}
+
+.list-row-content {
+  min-width: 0%;
+  box-sizing: border-box;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-evenly;
 }
 
-.list-item{
-  display: flex;
-  margin: 10rpx 20rpx;
-}
-.list-image{
-  width: 240rpx;
-}
-
-.list-content{
-  flex:1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding:0 40rpx;
-}
-
-.list-title{
-  font-size:38rpx;
+.list-title {
+  font-size: 38rpx;
   font-weight: bolder;
   line-height: 2.0;
 }
 
-.list-text{
-  font-size:28rpx;
-  color:#999;
+.list-row-text {
+  font-size: 30rpx;
+  color: #999;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
+.list-grid{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 20rpx;
+}
 
+.list-grid-text{
+  margin: 20rpx 0;
+  font-size: 30rpx;
+}

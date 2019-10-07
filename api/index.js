@@ -25,24 +25,35 @@ const request = (url, method, data) => {
   })
 }
 const MockUrl ="http://192.168.3.101:5500";
+const prodUrl = "http://192.168.3.101:3000";
+const isDev=false;
 module.exports = { 
   request,
   fetchBannar:()=>{
-    return request(MockUrl+'/bannar.json','get');
+    return isDev ? request(MockUrl + '/bannar.json', 'get') : request(prodUrl + '/banner?type=1', 'get');
   },
   fetchTodaySongs: () => {
-    return request(MockUrl + '/today-songs.json', 'get');
+    return isDev ? request(MockUrl + '/today-songs.json', 'get') : request(prodUrl + '/personalized?limit=6', 'get');
   },
   fetchLatestSongs: () => {
-    return request(MockUrl + '/latest-mv.json', 'get');
+    return isDev ? request(MockUrl + '/latest-mv.json', 'get') : request(prodUrl + '/mv/first?limit=10', 'get');
   },
   fetchNiceMv: () => {
-    return request(MockUrl + '/nice-mv.json', 'get');
+    return isDev ? request(MockUrl + '/nice-mv.json', 'get') : request(prodUrl + '/personalized/mv', 'get');
   },
   fetchNiceRadio: () => {
-    return request(MockUrl + '/nice-radio.json', 'get');
+    return isDev ? request(MockUrl + '/nice-radio.json', 'get') : request(prodUrl + '/personalized/djprogram', 'get');
   },
   fetchTopList: () => {
-    return request(MockUrl + '/toplist-detail.json', 'get');
+    return isDev ? request(MockUrl + '/toplist-detail.json', 'get') : request(prodUrl + '/toplist/detail', 'get');
+  },
+  fetchSongSheet: (id) => {
+    return isDev ? request(MockUrl + '/playlist-detail.json?id=' + id, 'get') : request(prodUrl + '/playlist/detail?id='+id, 'get');
+  },
+  fetchSongDetail: (id) => {
+    return isDev ? request(MockUrl + '/song-detail.json?ids=' + id, 'get') : request(prodUrl + '/song/detail?ids=' + id, 'get');
+  },
+  fetchSongMp3: (id) => {
+    return isDev ? request(MockUrl + '/song-mp3.json?id=' + id, 'get') : request(prodUrl + '/song/url?id=' + id, 'get');
   }
 };

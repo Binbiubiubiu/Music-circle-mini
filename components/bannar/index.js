@@ -15,6 +15,7 @@ Component({
   data: {
     bannars: []
   },
+  
   ready(){
     fetchBannar().then((res) => {
       this.setData({
@@ -26,6 +27,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    handleTap(e) {
+      const { target: { dataset: { url}}} =e;
+      if(!url)return;
+      wx.navigateTo({
+        url: '../webview/index?url='+url,
+      });
+    },
   }
 })

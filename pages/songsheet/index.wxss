@@ -1,0 +1,151 @@
+/* pages/songsheet/index.wxss */
+@import "../../styles/gobal.wxss";
+
+.bannar {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40% auto;
+  grid-gap: 40rpx;
+  padding: 40rpx 60rpx 60rpx;
+  overflow: hidden;
+}
+
+.bannar-mask {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  right: -10%;
+  bottom: -10%;
+  z-index: -1;
+  background: no-repeat scroll center center / 100%;
+  filter: blur(10px);
+}
+
+.bannar-title {
+  font-weight: bold;
+  color: #fff;
+}
+
+.bannar-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bannar-avatar {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.bannar-nickname {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 26rpx;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+
+.bannar-info {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 22rpx;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.bannar-btn-group {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bannar-btn {
+  flex-basis: 20%;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  font-size: 26rpx;
+}
+
+.bannar-btn-icon {
+  display: block;
+  margin: 0 auto 6rpx;
+  width: 2.4em;
+}
+
+.song-list {
+  border-radius: 40rpx;
+  overflow: hidden;
+  margin-top:-30rpx;
+  background-color: #fff;
+}
+
+.song-item {
+  display: flex;
+  height: 120rpx;
+  align-items: center;
+}
+
+.song-item:active {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.song-content {
+  flex: 1;
+  min-width: 0;
+  padding: 0 20rpx;
+}
+
+.song-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.song-block-2 {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  height: 100%;
+}
+
+.song-index {
+  width: 3.4em;
+  font-size: 30rpx;
+  color: #777;
+}
+
+.song-title {
+  font-size: 30rpx;
+}
+
+.song-subtitle {
+  font-size: 24rpx;
+  color: #777;
+}
+
+.song-btn-group{
+  display: flex;
+  height: 100%;
+}
+
+.song-btn{
+  width: 80rpx;
+}
+
+.song-btn-icon{
+  width: 48rpx;
+}
+
+.song-store-btn{
+  font-size: 24rpx;
+  color:#fff;
+  background: red;
+  padding: 30rpx 30rpx;
+  border-radius: 60rpx;
+  margin-right: 10rpx;
+}

@@ -1,2 +1,25 @@
 <!--player/index.wxml-->
-<text>player/index.wxml</text>
+<wxs src="../../utils/filter.wxs" module="filter" />
+
+<view class="player-wrapper">
+  <view class="player-mask" style="background-image:url({{detail.al.picUrl}})"></view>
+  <view class="player-main">
+    <image src="{{detail.al.picUrl}}" mode="widthFix" class="player-image"></image>
+  </view>
+
+  <!-- <view style="text-align:center;">
+    <view>{{detail.name}}</view>
+    <view>- {{detail.ar[0].name}} -</view>
+  </view> -->
+
+  <!-- <audio  src="{{songs.url}}" id="myAudio" bindtimeupdate="handleTimeUpdate"></audio> -->
+
+  <view class="player-progress" data-current="{{filter.formatTime(currentTime)}}" data-end="{{filter.formatTime(detail.dt)}}">
+    <view class="progress-bar" style="background:linear-gradient(to  right, rgba(255, 255, 255, 1) {{percent}}%, rgba(255, 255, 255, .40) {{percent}}%);">
+      <view class="progress-archor" style="left:{{percent}}%;"></view>
+    </view>
+  </view>
+  <view class="player-btn-group">
+    <image bindtap="audioPlay" src="/images/player_{{isPlay?'stop':'play'}}.png" class="player-btn" mode="widthFix" ></image>
+  </view>
+</view>
