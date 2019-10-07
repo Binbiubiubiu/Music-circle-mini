@@ -5,7 +5,7 @@
 <view class="player-wrapper">
   <view class="player-mask" style="background-image:url({{detail.al.picUrl}})"></view>
   <view class="player-main">
-    <image src="{{detail.al.picUrl}}" mode="widthFix" class="player-image"></image>
+    <image src="{{detail.al.picUrl}}" mode="widthFix" class="player-image {{isPlay?'play-animate':''}}"></image>
   </view>
 
   <!-- <view style="text-align:center;">

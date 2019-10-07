@@ -28,7 +28,7 @@ Page({
     })
   },
   handleTimeUpdate(){
-  
+    console.log(121)
 
     const {  currentTime, duration  } = this.audioCtx;
     const { currentTime:now,percent}=this.data;
@@ -56,8 +56,14 @@ Page({
     })
   },
   audioMove() {
-    const { detail:{dt}, percent}=this.data;
-    this.audioCtx.seek(~~(dt*percent/100/1000))
+    const { detail: { dt }, percent, isPlay}=this.data;
+    isPlay&&this.audioCtx.pause();
+    this.audioCtx.seek(~~(dt*percent/100)/1000)
+    if(isPlay){
+      setTimeout(() => {
+        this.audioCtx.play();
+      }, 100)
+    }
   },
   audioStart: function () {
     this.audioCtx.seek(0)

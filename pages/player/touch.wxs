@@ -1,7 +1,6 @@
 module.exports = {
   touchstart: function (event, instance) {
     var archor = instance.selectComponent('.progress-archor');
-    console.log(11)
     archor.addClass('progress-archor-active');
   },
   touchmove: function (event,instance) {

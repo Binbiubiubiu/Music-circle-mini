@@ -30,6 +30,20 @@ page{
   box-shadow: 0 0 0 14rpx rgba(255, 255, 255, .24);
 }
 
+.play-animate{
+  animation:pan-rotate 30s infinite;
+}
+
+@keyframes pan-rotate{
+  0%{
+    transform: rotate(0)
+  }
+  
+  100%{
+    transform: rotate(360deg)
+  }
+}
+
 .player-main{
   flex:1;
   display: flex;
