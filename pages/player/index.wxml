@@ -21,6 +21,8 @@
     </view>
   </view>
   <view class="player-btn-group">
+   <image bindtap="audioPlay" src="/images/player_last_song.png" class="player-btn" mode="widthFix" ></image>
     <image bindtap="audioPlay" src="/images/player_{{isPlay?'stop':'play'}}.png" class="player-btn" mode="widthFix" ></image>
+     <image bindtap="audioPlay" src="/images/player_next_song.png" class="player-btn" mode="widthFix" ></image>
   </view>
 </view>

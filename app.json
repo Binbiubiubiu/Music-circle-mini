@@ -1,12 +1,12 @@
 {
   "pages": [
-    
     "pages/index/index",
     "pages/me/index",
     "pages/search/index",
     "pages/webview/index",
     "pages/songsheet/index",
-    "pages/player/index"
+    "pages/player/index",
+    "pages/mv/index"
   ],
   "tabBar": {
     "color": "#7A7E83",

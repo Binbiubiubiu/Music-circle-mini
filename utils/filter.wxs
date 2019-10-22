@@ -1,13 +1,33 @@
-var getAuthors = function(authors){
-  return authors.map(function(item){
+var getAuthors = function(authors,split='、'){
+  return authors &&authors.length>0?authors.map(function(item){
     return item.name;
-  }).join('、');
+  }).join(split):'';
 } 
 
 var formatTime = function (time) {
   var seconds=~~time/1000;
   return formatZeroEnough(~~(seconds / 60)) + ':' + formatZeroEnough(~~(seconds % 60));
 } 
+
+var formatDate = function (date) {
+  var date = getDate(date); //返回当前时间对象
+  var year = date.getFullYear()
+  var month = fixz(date.getMonth() + 1)
+  var day = fixz(date.getDate())
+
+  var hour = fixz(date.getHours())
+  var minute = fixz(date.getMinutes())
+  var second = fixz(date.getSeconds())
+
+  return [year, month, day].join('-') + ' ' +[hour, minute, second].join(':')
+}
+
+var fixz = function (num) {
+  if (num < 10) {
+    return '0' + num
+  }
+  return num
+}
 
 var formatZeroEnough=function(num){
   if(typeof num !== 'number') return  '';
@@ -23,5 +43,6 @@ module.exports={
   getAuthors: getAuthors,
   formatTime: formatTime,
   formatZeroEnough: formatZeroEnough,
-  formatNum2Wan: formatNum2Wan
+  formatNum2Wan: formatNum2Wan,
+  formatDate: formatDate,
 }

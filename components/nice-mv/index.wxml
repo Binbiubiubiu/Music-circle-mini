@@ -4,15 +4,15 @@
     <text class="text">MV精选</text>
   </view>
   <view class="list">
-    <view class="list-item" wx:for="{{list}}" wx:key="{{item}}">
+   <navigator url="../mv/index?id={{item.id}}&title={{item.name}}" class="list-item" wx:for="{{list}}" wx:key="{{item}}">
       <view class="cover-play">
         <image class="normal-image" mode="widthFix" src="{{item.picUrl}}"></image>
       </view>
       <view class="list-text">
-        {{item.name}}
-        <view class="list-sub-text">{{item.artistName}}</view>
+        <view class="text-overflow-1">{{item.name}}</view>
+        <view class="list-sub-text ">{{item.artistName}}</view>
       </view>
-    </view>
+    </navigator>
   </view>
 
 </scroll-view>

@@ -6,7 +6,7 @@
 
   <view class="list-wrapper">
     <scroll-view class="list" scroll-x style="width: 100%">
-      <view wx:for="{{list}}" wx:key="{{item}}" class="list-item ">
+      <navigator url="../mv/index?id={{item.id}}&title={{item.name}}" wx:for="{{list}}" wx:key="{{item}}" class="list-item ">
        
           <view class="list-image-wrapper cover-play">
           <image src="{{item.cover}}" mode="widthFix" class="normal-image "></image>
@@ -15,7 +15,7 @@
             {{item.briefDesc}}
           </view>
     
-      </view>
+      </navigator>
 
     </scroll-view>
   </view>

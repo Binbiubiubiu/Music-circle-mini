@@ -25,7 +25,7 @@ const request = (url, method, data) => {
   })
 }
 const MockUrl ="http://192.168.3.101:5500";
-const prodUrl = "http://192.168.3.101:3000";
+const prodUrl = "http://192.168.3.100:3000";
 const isDev=false;
 module.exports = { 
   request,
@@ -55,5 +55,17 @@ module.exports = {
   },
   fetchSongMp3: (id) => {
     return isDev ? request(MockUrl + '/song-mp3.json?id=' + id, 'get') : request(prodUrl + '/song/url?id=' + id, 'get');
-  }
+  },
+  // mv 详情
+  fetchMVDetail: (id) => {
+    return isDev ? request(MockUrl + '/song-mp3.json?id=' + id, 'get') : request(prodUrl + '/mv/detail?mvid=' + id, 'get');
+  },
+  // 歌手详情
+  fetchSingerDetail: (id) => {
+    return isDev ? request(MockUrl + '/song-mp3.json?id=' + id, 'get') : request(prodUrl + '/artist/desc?id=' + id, 'get');
+  },
+  // 歌手详情
+  fetchMvComment: (id) => {
+    return isDev ? request(MockUrl + '/song-mp3.json?id=' + id, 'get') : request(prodUrl + '/comment/mv?id=' + id, 'get');
+  },
 };

@@ -1,0 +1,51 @@
+<!--pages/mv/index.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+
+<video id="myVideo" src="{{detail.brs['480']}}" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls autoplay></video>
+<view class="mv-info">
+  <view class="mv-title">{{detail.name}}</view>
+  <view class="mv-subTitle">{{filter.formatNum2Wan(detail.playCount)}}次观看</view>
+  <view class="mv-btn-group">
+    <view>
+      <image src="/images/mv_dianzan.png" mode="widthFix" class="mv-btn-icon" />
+      <view class="mv-btn-text">{{detail.likeCount}}</view>
+    </view>
+
+    <view>
+      <image src="/images/mv_xihuan.png" mode="widthFix" class="mv-btn-icon" />
+      <view class="mv-btn-text">{{detail.subCount}}</view>
+    </view>
+
+    <view>
+      <image src="/images/mv_pinglun.png" mode="widthFix" class="mv-btn-icon" />
+      <view class="mv-btn-text">{{detail.commentCount}}</view>
+    </view>
+
+    <view>
+      <image src="/images/mv_fenxiang.png" mode="widthFix" class="mv-btn-icon" />
+      <view class="mv-btn-text">{{detail.shareCount}}</view>
+    </view>
+  </view>
+</view>
+<view class="mv-author">
+  <view >
+  <image wx:for="{{singerAvator}}" src="{{item}}" mode="widthFix" class="mv-author-pic" />
+  </view>
+  <view class="mv-author-name">{{filter.getAuthors(detail.artists,'/')}}</view>
+  <view class="mv-author-btn">+ 收藏</view>
+</view>
+<view class="comment-list">
+  <view class="comment-title">精彩评论</view>
+  <view wx:for="{{commentList}}" class="comment-item">
+    <image  src="{{item.user.avatarUrl}}" mode="widthFix" class="comment-author-pic" />
+    <view class="comment-content">
+      <view class="comment-zan"> 
+       {{item.likedCount}}
+        <image src="/images/mv_dianzan.png" mode="widthFix" class="comment-zan-icon" />
+      </view>
+      <view class="comment-author">{{item.user.nickname}}</view>
+      <view class="comment-time">{{filter.formatDate(item.time)}}</view>
+      <view class="comment-text">{{item.content}}</view>
+    </view>
+  </view>
+</view>

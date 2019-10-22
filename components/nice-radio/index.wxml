@@ -9,8 +9,8 @@
         <image class="normal-image" mode="widthFix" src="{{item.picUrl}}"></image>
       </view>
       <view class="list-text">
-        {{item.name}}
-        <view class="list-sub-text">{{item.copywriter}}</view>
+        <view class="text-overflow-2">{{item.name}}</view>
+        <view class="list-sub-text text-overflow-2">{{item.copywriter}}</view>
       </view>
     </view>
   </view>

@@ -22,7 +22,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.8.3",
+	"libVersion": "2.9.0",
 	"appid": "wx90d2a064ca2dc1c8",
 	"projectname": "music-circle",
 	"debugOptions": {

@@ -7,9 +7,9 @@
 <view class="list">
  
   <view class="list-item" wx:for="{{list}}" wx:key="{{item}}" data-playcount="{{'▷ '+filter.formatNum2Wan(item.playCount)}}">
-    <navigator url="../songsheet/index?id={{item.id}}" >
+    <navigator url="../songsheet/index?id={{item.id}}&title={{item.name}}" >
       <image class="normal-image" mode="widthFix" src="{{item.picUrl}}"></image>
-      <view class="list-text">{{item.name}}</view>
+      <view class="list-text text-overflow-2">{{item.name}}</view>
     </navigator>
   </view>
 </view>

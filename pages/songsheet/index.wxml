@@ -51,7 +51,7 @@
       + 收藏({{playlist.subscribedCount}})
     </view>
   </view>
-  <navigator url="../player/index?id={{song.id}}" wx:for="{{playlist.tracks}}"  wx:key="{{song.id}}" wx:for-index="idx" wx:for-item="song">
+  <navigator url="../player/index?id={{song.id}}"  wx:for="{{playlist.tracks}}"  wx:key="{{song.id}}" wx:for-index="idx" wx:for-item="song">
   <view class="song-item" >
    
     <view class="song-index song-block">
@@ -62,7 +62,7 @@
         <view class="song-subtitle text-ellipsis">{{filter.getAuthors(song.ar)}} - {{song.al.name}}</view>
       </view>
       <view class="song-btn-group " >
-        <view class="song-btn song-block" wx:if="{{song.mv}}">
+        <view capture-catch:tap="goToMvPlayer" data-id="{{song.mv}}" class="song-btn song-block" wx:if="{{song.mv}}">
           <image src="/images/songsheet_video.png" mode="widthFix" class="song-btn-icon"></image>
         </view>
         <view class="song-btn song-block-2">

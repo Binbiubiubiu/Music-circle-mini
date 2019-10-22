@@ -28,7 +28,6 @@ Page({
     })
   },
   handleTimeUpdate(){
-    console.log(121)
 
     const {  currentTime, duration  } = this.audioCtx;
     const { currentTime:now,percent}=this.data;
@@ -73,9 +72,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
+
     fetchSongDetail(options.id).then((res) => {
       this.setData({
         detail: res.songs[0]
+      })
+
+      wx.setNavigationBarTitle({
+        title: res.songs[0].name  //修改title
       })
     })
 

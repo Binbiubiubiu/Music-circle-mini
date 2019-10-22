@@ -14,13 +14,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: options.title  //修改title
+    })
     fetchSongSheet(options.id).then((res) => {
       this.setData({
         playlist: res.playlist
       })
     })
+  }, 
+  goToMvPlayer(e){
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: "../mv/index?id="+id,
+    })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
